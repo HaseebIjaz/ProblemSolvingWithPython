@@ -10,5 +10,5 @@
 
     - readme.md
     - <Problem Statement Folder>
-        - |problem.md
+        - |readme.md
         - |solution.py
