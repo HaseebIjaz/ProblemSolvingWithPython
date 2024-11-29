@@ -17,3 +17,8 @@
 ## Insight:
 
 1. We need to understand if someone stresses wether someone is giving us a choice that it can have only one solution , which means that we can think about the greedy solution or a solution which comes first and just return.
+2. Range outputs an iterable object that can be iterated over, its output is very similar to the indexing like it starts from zero by default, you can pass starting point in its first argument as well, and the last argument is the step size
+
+## Link:
+
+[Click Here](https://leetcode.com/problems/two-sum/)
