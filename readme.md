@@ -12,3 +12,10 @@
     - <Problem Statement Folder>
         - |readme.md
         - |solution.py
+
+## Future Approach
+
+    1. Find Typing support in it and build it like a project from now on
+    2. Start with starting to bring poetry around it
+    3. Then dockerize it
+    4. Use Dev Containers etc
