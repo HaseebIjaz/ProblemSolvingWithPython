@@ -38,3 +38,5 @@ if root == None:
 ```
 
 - Always use **`is None`** (or **`is not None`**) when checking for None
+
+- We have a different mindset for a BST and a Binary tree, BST is a sorted structute.
