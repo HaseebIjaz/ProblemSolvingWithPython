@@ -1,5 +1,10 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
+        return sorted(s) == sorted(t)
+    
+
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
         if len(s) != len(t):
             return False
         # After this line lenghts are equal
