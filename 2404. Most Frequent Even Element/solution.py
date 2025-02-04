@@ -15,7 +15,7 @@ class Solution:
                 return freq[i][0]
             elif len(freq[i]) > 1:
                 return min(freq[i])
-        return +1
+        return -1
             
         
         
