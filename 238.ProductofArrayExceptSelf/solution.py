@@ -11,5 +11,5 @@ class Solution:
                 product *= nums[j]
             res[i] = product
         
-        return res 
+        return [res]
     
