@@ -37,3 +37,27 @@ class Solution:
             if s[l] != s[r]:
                 return False
             l, r = l + 1, r - 1 
+
+
+
+# Two Pointers Construction:
+
+#         l, r = 0, len(s) - 1
+
+#         while l < r:
+#             while l < r and not self.isAlphaNum(s[l]):
+#                 l += 1
+#             while l < r and not self.isAlphaNum(s[r]):
+#                 r -= 1
+#             if s[l] != s[r]:
+#                 return False
+#             l, r = l + 1, r - 1 
+			
+
+# -> first naming convention: l, r
+# -> l = 0 (first index) , r = len(s) - 1 (last index)
+# -> bound condition: l < r 
+# -> moving l and r till specific conditions are met
+# -> checking the main condition 
+# -> updating r and l for the next iteration 
+
