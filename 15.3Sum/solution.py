@@ -11,12 +11,4 @@ class Solution:
                 twoSums[twoSum] = twoSums.get(twoSum, [])
                 twoSums[twoSum].append([nums[i], nums[j]])
         
-        for twoSum in twoSums:
-            complement = target - twoSum
-            if complement in indexMap:
-                k = indexMap[complement]
-                for ij in twoSums[twoSum]:
-                    i,j = ij
-                    if i != j and j !=k and i!= k:
-                        res.append([i,j,k])
         return res
