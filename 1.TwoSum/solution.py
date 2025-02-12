@@ -36,3 +36,19 @@ class Solution:
             else:
                 j -= 1
         return []
+    
+class Solution:
+    def twoSum(self, numbers:List[int], target:int) -> List[int]:
+        if numbers[(len(numbers) - 2)] + numbers[len(numbers) - 1] < target: return []
+        if numbers[0] + numbers[1] > target: return []
+        
+        l, r = 0, len(numbers) - 1
+        while l < r:
+            current_sum = numbers[l] + numbers[r]
+            if current_sum == target:
+                return [l + 1, r + 1]  # 1-based indices
+            elif current_sum > target:
+                r -= 1  # Reduce sum by moving right pointer left
+            else:
+                l += 1  # Increase sum by moving left pointer right
+        return []
