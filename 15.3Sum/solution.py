@@ -1,45 +1,27 @@
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        target = 0
-        twoSums = {}
-        indexMap = {}
         res = []
-        for i in range(len(nums)):
-            indexMap[nums[i]] = i  
-            for j in range(i+1,len(nums)):
-                twoSum = nums[i] + nums[j] 
-                twoSums[twoSum] = twoSums.get(twoSum, [])
-                twoSums[twoSum].append([nums[i], nums[j]])
-        
-        for twoSum in twoSums:
-            complement = target - twoSum
-            if complement in indexMap:
-                k = indexMap[complement]
-                for ij in twoSums[twoSum]:
-                    i,j = ij
-                    if i != j and j !=k and i!= k:
-                        res.append([i,j,k])
-        return res
+        nums.sort()
 
-class Solution:
-    def threeSum(self, nums: List[int]) -> List[List[int]]:
-        target = 0
-        twoSums = {}
-        indexMap = {}
-        res = []
-        for i in range(len(nums)):
-            indexMap[nums[i]] = i  
-            for j in range(i+1,len(nums)):
-                twoSum = nums[i] + nums[j] 
-                twoSums[twoSum] = twoSums.get(twoSum, [])
-                twoSums[twoSum].append([nums[i], nums[j]])
-        
-        for twoSum in twoSums:
-            complement = target - twoSum
-            if complement in indexMap:
-                k = indexMap[complement]
-                for ij in twoSums[twoSum]:
-                    i,j = ij
-                    if i != j and j !=k and i!= k:
-                        res.append([i,j,k])
+        for i, a in enumerate(nums):
+            if a > 0:
+                break
+
+            if i > 0 and a == nums[i - 1]:
+                continue
+
+            l, r = i + 1, len(nums) - 1
+            while l < r:
+                threeSum = a + nums[l] + nums[r]
+                if threeSum > 0:
+                    r -= 1
+                elif threeSum < 0:
+                    l += 1
+                else:
+                    res.append([a, nums[l], nums[r]])
+                    l += 1
+                    r -= 1
+                    while nums[l] == nums[l - 1] and l < r:
+                        l += 1
+                        
         return res
