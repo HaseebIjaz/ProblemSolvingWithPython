@@ -2,28 +2,35 @@ class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         res = []
         nums.sort()
-        target = 0
 
         for i, num in enumerate(nums):
+            # If smallest number in sorted array is greater than zero then the 3sum will never be equal to 0
             if num > 0:
                 break
 
-            if i > 0 and nums[i - 1] == num:
+            # The duplicate is always the second or third one and never the first one
+            # for nums[i - 1] , i must be greater than zero
+            # so it caters for both the cases
+            #skipping duplicates
+            if i > 0 and  num == nums[i - 1]:
                 continue
+            
+            #If we reach this part then it means that we have selected one number which is num 
+            # and have skipped all its duplicated and now we will select next two nums via twoSum in the nextRange
+            # out of 3 nums we have found 1 number, this is the underlying assumption
 
-            #As soon as we reach this point, num is selected, now select remaining 2
-
-            l, r = i + 1, len(nums) - 1
+            l, r = i+1, len(nums) - 1
             while l < r:
                 threeSum = num + nums[l] + nums[r]
-                if threeSum > target:
+                if threeSum > 0:
                     r -= 1
-                elif threeSum < target:
+                elif threeSum < 0:
                     l += 1
                 else:
-                    res.append([num, nums[l], nums[r]])
-                    l += 1
-                    r -= 1
-                    while l < r and nums[l] == nums[l - 1]:
-                        l += 1
+                    res.append([a,nums[l],nums[r]])
+                    #Now next part is to prepare for the next iteration
+                    
+            
+
+        
         return res
