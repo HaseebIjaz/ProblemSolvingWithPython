@@ -34,3 +34,19 @@ class Solution:
 
         
         return res
+
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        n = len(nums)
+        res = set()
+        nums.sort()
+
+        # if we do not sort we wont be able to generate duplicates, by sorting we will be able to generate duplicates
+        # if we generate duplicates then we will be able to filter them using set
+
+        for i in range(n):
+            for j in range(i+1, n):
+                for k in range(j+1, n):
+                    if nums[i]+nums[j]+nums[k]:
+                        tmp = [nums[i], nums[j], nums[k]]
+                        res.add(tuple(tmp))
+        return [list(tup) for tup in res]
