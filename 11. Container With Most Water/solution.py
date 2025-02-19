@@ -7,7 +7,7 @@ class Solution:
             for j in range(i+1, n):
                 h = min(heights[i], heights[j])
                 w = j - i
-                width = h * w
+                area = h * w
                 if area > max_area :
                     max_area = area
         return max_area
