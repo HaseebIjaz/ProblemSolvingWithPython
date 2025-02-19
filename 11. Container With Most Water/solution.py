@@ -9,7 +9,7 @@ class Solution:
                 w = j - i
                 width = h * w
                 if area > max_area :
-                    max_area = area1
+                    max_area = area
         return max_area
     
 class Solution:
