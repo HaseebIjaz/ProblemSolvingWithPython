@@ -12,7 +12,7 @@ class Solution:
                     max_area = area
         return max_area
     
-class Solution123:
+class Solution:
     def maxArea(self, height: List[int]) -> int:
         n = len(height)
         if n == 2: return min(height[0],height[1])
