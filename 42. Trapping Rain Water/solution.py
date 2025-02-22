@@ -21,4 +21,4 @@ class Solution:
                     area += min(height[l],height[r]) - height[i]
             
             l = r
-        return area13
+        return area
